@@ -12,7 +12,7 @@ func searchInsert(nums []int, target int) int {
 	left, right := 0, len(nums)-1 // 左界、右界
 	// 設定左右界的目的是找到 middle
 	for left <= right {
-		middle := (left + right) / 2
+		middle := left + (right-left)/2
 		// Q: 除不盡怎麼辦？
 		// A: 誰來當 middle 都沒有關係，只要還是分成左區間與右區間即可，除不盡會捨去
 
