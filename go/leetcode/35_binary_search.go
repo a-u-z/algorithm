@@ -26,5 +26,3 @@ func searchInsert(nums []int, target int) int {
 	}
 	return left
 }
-func main() {
-}
