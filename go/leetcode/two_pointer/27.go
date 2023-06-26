@@ -1,4 +1,4 @@
-package main
+package twopointer
 
 // 通過兩個指針，一個快一個慢，在一個 for 迴圈當中，完成需要兩個 for 迴圈的事情
 // 又稱為快慢指針
