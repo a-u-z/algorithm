@@ -4,15 +4,16 @@ package main
 // 又稱為快慢指針
 // 快指針：
 func removeElement(nums []int, val int) int {
-	slowIndex := 0
+	// 遇到的 val 要刪除掉
+	n := len(nums)
 
-	for i := 0; i < len(nums); i++ { // 效率與記憶體位置都比 range 好
-		// 上面這個 i 是快指針
-		if nums[i] != val {
-			nums[slowIndex] = nums[i]
-			slowIndex++
+	resultPointer := 0 // 遇到目標的時候，指針不動
+	for i := 0; i < n; i++ {
+		if nums[i] == val {
+		} else {
+			nums[resultPointer] = nums[i]
+			resultPointer++
 		}
 	}
-	nums = nums[:slowIndex]
-	return slowIndex
+	return resultPointer
 }
