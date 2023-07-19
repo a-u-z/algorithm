@@ -1,19 +1,18 @@
 package twopointer
 
-import "fmt"
-
 func moveZeroes(nums []int) {
-	if len(nums) == 0 {
+	// 概念是 left 當做完成的最尾部
+	// 去蒐集非零的元素，當做完成的，一個一個放在 array 前面
+
+	if len(nums) < 2 {
 		return
 	}
 
-	left := 0 // 左指针，指向当前已处理好的序列的尾部
+	left := 0
 	for i := 0; i < len(nums); i++ {
 		if nums[i] != 0 {
-			// 非零元素与当前已处理好的序列的尾部交换
-			nums[left], nums[i] = nums[i], nums[left]
+			nums[i], nums[left] = nums[left], nums[i]
 			left++
 		}
-		fmt.Println(nums) // 打印每一轮的结果
 	}
 }

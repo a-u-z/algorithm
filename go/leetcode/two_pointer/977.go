@@ -8,7 +8,7 @@ func sortedSquares(nums []int) []int {
 		return nums
 	}
 	// 1. 因為是由小到大的排序，也就是兩端的數字本身（不看正負號）會是比較大的
-	// 所以要先比較這兩端的數字，那就需要兩個指針，也就是 two pointer
+	// 所以要先比較這兩端的數字，那就需要兩個
 	n := len(nums) // 3
 	result := make([]int, n)
 	left, right, index := 0, n-1, n-1
