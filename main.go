@@ -1,7 +1,10 @@
 package main
 
-import twopointer "leetcode/go/leetcode/two_pointer"
+import (
+	sw "leetcode/go/leetcode/slice_window"
+)
 
 func main() {
-	twopointer.Re("We are happy")
+
+	sw.SliminSubArrayLen(7, []int{2, 3, 1, 2, 4, 3})
 }
