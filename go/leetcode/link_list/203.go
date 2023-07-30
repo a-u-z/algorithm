@@ -1,0 +1,85 @@
+package main
+
+import "fmt"
+
+// 定義節點結構
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func main() {
+	// 创建测试数据 [1,2,6,3,4,5,6]
+	nums := []int{1, 2, 6, 3, 4, 5, 6}
+
+	// 创建链表
+	head := createLinkedList(nums)
+
+	// 输出原始链表
+	fmt.Println("Original Linked List:")
+	printLinkedList(head)
+
+	// 删除值为 6 的节点
+	val := 6
+	newHead := removeElements(head, val)
+
+	// 输出删除后的链表
+	fmt.Println("Linked List after removing", val, ":")
+	printLinkedList(newHead)
+}
+
+func removeElements(head *ListNode, val int) *ListNode {
+
+	// 為了處理開頭如果是需要被拿掉的 val
+	// 所以建立一個 prev 來當做更上一層
+	// 作用只是用來當更頭的節點
+	prev := &ListNode{
+		Val:  0,
+		Next: head,
+	}
+
+	// 像是指針的概念，知道現在處理到哪一個物件
+	// 直接修改 current 的 next
+	current := prev
+	for current.Next != nil {
+		// 符合題目要的，就更改 next
+		if current.Next.Val == val {
+			current.Next = current.Next.Next
+		} else {
+			// 不符合題目要的，那就把 current = current 的下一個
+			// 往下移動
+			current = current.Next
+		}
+	}
+	return prev.Next
+}
+
+// 打印链表
+func printLinkedList(head *ListNode) {
+	current := head
+	for current != nil {
+		fmt.Print(current.Val, " -> ")
+		current = current.Next
+	}
+	fmt.Println("nil")
+}
+
+// 创建链表并返回头节点
+func createLinkedList(nums []int) *ListNode {
+	if len(nums) == 0 {
+		return nil
+	}
+
+	head := &ListNode{Val: nums[0]}
+	current := head
+
+	for i := 1; i < len(nums); i++ {
+		newNode := &ListNode{Val: nums[i]}
+		current.Next = newNode
+		current = newNode
+	}
+
+	return head
+}
+
+// 創建連結串列
