@@ -8,26 +8,6 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func main() {
-	// 创建测试数据 [1,2,6,3,4,5,6]
-	nums := []int{1, 2, 6, 3, 4, 5, 6}
-
-	// 创建链表
-	head := createLinkedList(nums)
-
-	// 输出原始链表
-	fmt.Println("Original Linked List:")
-	printLinkedList(head)
-
-	// 删除值为 6 的节点
-	val := 6
-	newHead := removeElements(head, val)
-
-	// 输出删除后的链表
-	fmt.Println("Linked List after removing", val, ":")
-	printLinkedList(newHead)
-}
-
 func removeElements(head *ListNode, val int) *ListNode {
 
 	// 為了處理開頭如果是需要被拿掉的 val
