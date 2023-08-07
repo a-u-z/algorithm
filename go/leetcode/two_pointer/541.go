@@ -4,20 +4,6 @@ import (
 	"fmt"
 )
 
-func AreverseStr(s string, k int) string {
-	ss := []byte(s)
-	len := len(s)
-
-	for i := 0; i < len; i += 2 * k {
-		if i+k < len {
-			reverse(ss[i : i+k])
-		} else {
-			reverse(ss[i:len])
-		}
-	}
-	return string(ss)
-}
-
 func reverseStr(s string, k int) string {
 	ss := []byte(s)
 	length := len(s)
@@ -39,6 +25,7 @@ func main() {
 	fmt.Println(result) // 输出 "bacdfeg"
 }
 
+// 因為是 slice 所以改動到的是地址
 func reverse(b []byte) {
 	left := 0
 	right := len(b) - 1
