@@ -1,4 +1,4 @@
-package twopointer
+package main
 
 import "log"
 

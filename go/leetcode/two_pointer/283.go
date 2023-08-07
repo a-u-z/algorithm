@@ -1,4 +1,4 @@
-package twopointer
+package main
 
 func moveZeroes(nums []int) {
 	// 概念是 left 當做完成的最尾部

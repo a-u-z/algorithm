@@ -1,4 +1,4 @@
-package twopointer
+package main
 
 func removeDuplicates(nums []int) int {
 	// 1. 處理 edge case

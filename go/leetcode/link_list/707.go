@@ -1,28 +1,8 @@
 package main
 
-import "fmt"
-
 type MyLinkedList struct {
 	Head *ListNode
 	Size int
-}
-
-func main() {
-	list := Constructor()
-
-	// 測試 AddAtHead 和 Get
-	list.AddAtHead(1)
-	list.AddAtHead(2)
-	list.AddAtHead(3)
-	fmt.Println("Current List: ", list.Head) // 預期輸出：3->2->1
-	fmt.Println("Get(0): ", list.Get(0))     // 預期輸出：3
-	fmt.Println("Get(1): ", list.Get(1))     // 預期輸出：2
-
-	// 測試 AddAtTail 和 DeleteAtIndex
-	list.AddAtTail(4)
-	fmt.Println("Current List: ", list.Head) // 預期輸出：3->2->1->4
-	list.DeleteAtIndex(2)
-	fmt.Println("Current List: ", list.Head) // 預期輸出：3->2->4
 }
 
 func Constructor() MyLinkedList {

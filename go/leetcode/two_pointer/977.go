@@ -1,4 +1,4 @@
-package twopointer
+package main
 
 // 因為題目有說這是排序過的 slice ，所以兩端的數字（不看正負號）會是比較大的
 // 所以可以用雙指針

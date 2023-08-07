@@ -1,4 +1,4 @@
-package twopointer
+package main
 
 func reverseString(s []byte) {
 	// 左跟右無限對調，直到左不是左，右不是右

@@ -21,10 +21,10 @@ func removeElements(head *ListNode, val int) *ListNode {
 	// 像是指針的概念，知道現在處理到哪一個物件
 	// 直接修改 current 的 next
 	current := prev
-	for current.Next != nil {
+	for current.Next != nil { // 只要下一個不是空的就要繼續檢查
 		// 符合題目要的，就更改 next
 		if current.Next.Val == val {
-			current.Next = current.Next.Next
+			current.Next = current.Next.Next // =  nil 也可以
 		} else {
 			// 不符合題目要的，那就把 current = current 的下一個
 			// 往下移動
